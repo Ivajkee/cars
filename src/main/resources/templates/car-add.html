@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Project Cars</title>
+</head>
+
+<body>
+<div class="container mt-5 mb-5">
+    <h1>Добавление авто</h1>
+    <form action="/car/add" method="post">
+        <input type="text" name="car" placeholder="Авто" class="form-control"><br>
+        <input type="text" name="model" placeholder="Модель" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Добавить авто</button>
+    </form>
+</div>
+</body>
+</html>
