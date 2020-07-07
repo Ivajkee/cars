@@ -11,7 +11,7 @@ public class Car implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "car")
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
     Set<Model> models = new HashSet<>();
 
     public Long getId() {
@@ -36,5 +36,10 @@ public class Car implements Serializable {
 
     public void setModels(Set<Model> models) {
         this.models = models;
+    }
+
+    public void addModel(Model model) {
+        getModels().add(model);
+        model.setCar(this);
     }
 }
